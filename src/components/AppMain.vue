@@ -12,7 +12,7 @@ export default {
   methods: {
     getProject() {
       axios.get(this.apiUrl).then((response) => {
-        console.log(response.data);
+        console.log(response);
         this.projects = response.data.data;
       });
     }
@@ -26,8 +26,11 @@ export default {
 <template>
   <div class="container">
     <div class="row">
+      <h1 class="text-center my-3">
+        Projects
+      </h1>
       <div class="d-flex flex-wrap justify-content-center align-items-center gap-3">
-        <div class="card" v-for="project in projects">
+        <div class="card p-3" v-for="project in projects">
           <h1>
             {{ project.title }}
           </h1>
