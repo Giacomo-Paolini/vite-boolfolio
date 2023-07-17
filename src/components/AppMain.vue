@@ -4,11 +4,10 @@ import {store} from '../data/store'
 export default {
   name: "AppMain",
   data() {
-      return {
-        store,
-      }
+    return {
+      store,
+    }
   },
-
 }
 </script>
 
