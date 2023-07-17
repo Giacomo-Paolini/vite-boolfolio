@@ -1,25 +1,14 @@
 <script>
-import axios from 'axios';
+import {store} from '../data/store'
 
 export default {
   name: "AppMain",
   data() {
       return {
-        apiUrl: "http://localhost:8000/api/projects",
-        projects: [],
+        store,
       }
   },
-  methods: {
-    getProject() {
-      axios.get(this.apiUrl).then((response) => {
-        console.log(response);
-        this.projects = response.data.data;
-      });
-    }
-  },
-  mounted() {
-    this.getProject();
-  }
+
 }
 </script>
 
@@ -30,7 +19,7 @@ export default {
         Projects
       </h1>
       <div class="d-flex flex-wrap justify-content-center gap-3">
-        <div class="card p-3" v-for="project in projects">
+        <div class="card p-3" v-for="project in this.store.projects">
           <h1>
             {{ project.title }}
           </h1>
