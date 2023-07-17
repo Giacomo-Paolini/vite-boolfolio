@@ -29,7 +29,7 @@ export default {
       <h1 class="text-center my-3">
         Projects
       </h1>
-      <div class="d-flex flex-wrap justify-content-center align-items-center gap-3">
+      <div class="d-flex flex-wrap justify-content-center gap-3">
         <div class="card p-3" v-for="project in projects">
           <h1>
             {{ project.title }}
