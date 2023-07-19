@@ -83,4 +83,8 @@ export default {
 .card {
     width: calc(100% / 2 - 20px);
 }
+
+a {
+    cursor: pointer;
+}
 </style>
