@@ -15,5 +15,6 @@ export default {
 
 <template>
     <h1>{{ project.title }}</h1>
+    <small>{{ project.technologies.name}}</small>
     <p>{{ project.content }}</p>
 </template>
