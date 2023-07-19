@@ -57,32 +57,24 @@ export default {
 
 <template>
     <div class="container">
-        <div class="row">
-            <h1 class="text-center my-3">
-                Projects
-            </h1>
-            <div class="d-flex flex-wrap justify-content-center gap-3 my-4">
-                <template v-for="project in projects">
-                <div class="card gap-4 p-3">
-                    <AppProjectCard :project="project" />
-                </div>
-                </template>
+        <h1 class="text-center my-3">
+            Projects
+        </h1>
+        <div class="row row-cols-2">
+            <div class="my-3" v-for="project in projects">
+                <AppProjectCard :project="project" />
             </div>
-            <div class="d-flex justify-content-center align-items-center gap-5 my-4">
-                <a class="button" @click="getProjectPrevPage">Pagina precedente</a>
-                <a class="button" @click="getProject(pageNumber)" v-for="pageNumber in projectTotalPage">{{ pageNumber }}</a>
-                <a class="button" @click="getProjectNextPage">Pagina successiva</a>
-            </div>
+        </div>
+        <div class="d-flex justify-content-center align-items-center gap-5 my-4">
+            <a class="button" @click="getProjectPrevPage">Pagina precedente</a>
+            <a class="button" @click="getProject(pageNumber)" v-for="pageNumber in projectTotalPage">{{ pageNumber }}</a>
+            <a class="button" @click="getProjectNextPage">Pagina successiva</a>
         </div>
 
     </div>
 </template>
 
 <style scoped>
-
-.card {
-    width: calc(100% / 2 - 20px);
-}
 
 a {
     cursor: pointer;
